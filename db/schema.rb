@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927022928) do
+ActiveRecord::Schema.define(version: 20170927163950) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "company_name"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(version: 20170927022928) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["zip"], name: "index_resumes_on_zip"
+  end
+
+  create_table "view_histories", force: :cascade do |t|
+    t.integer "resume_id"
+    t.datetime "time_viewed"
+    t.string "ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
